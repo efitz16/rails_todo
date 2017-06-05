@@ -1,24 +1,14 @@
-# README
+In order to deploy this app, please clone the repo, navigate into it, and run `bundle install`.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Next, run `rails db:create`.
 
-Things you may want to cover:
+Then run `rails db:migrate`
 
-* Ruby version
+Next, run `rails db:seed`
 
-* System dependencies
+Finally, run the server:
+`rails server` (or `rails s`)
 
-* Configuration
+Navigate to `localhost:3000`.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Please note: if rails is not installed, make sure you have Ruby installed (`ruby -v` should tell you what version), and then run `gem install rails`.
