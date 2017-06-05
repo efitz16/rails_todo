@@ -1,0 +1,22 @@
+<h1>To do</h1>
+<%= render 'form' %>
+
+<div class="tasks-container">
+  <% @tasks.each do |task| %>
+   <div class="task" id="task-<%= "#{task.id}" %>">
+    <% if task.done %>
+      <del>
+    <% end %>
+      <h3><%= task.title %></h3><span><%= link_to("x", task_path(task), method: "delete", data: {confirm: "Are you sure you want to delete this?"}) %></span>
+      <p><%= task.description %></p>
+      <% if task.done %>
+        <%= link_to("Undo", edit_task_path(task), :class => "edit-task", :id => "#{task.id}") %>
+      <% else %>
+        <%= link_to("Complete", edit_task_path(task), :class => "edit-task", :id => "#{task.id}") %>
+      <% end %>
+    </div><!-- if task.done -->
+    <% if task.done %>
+      </del>
+    <% end %><!-- done /del -->
+  <% end %><!-- @tasks.each do |task| -->
+</div>
